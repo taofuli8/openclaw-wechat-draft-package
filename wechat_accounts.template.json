@@ -1,0 +1,13 @@
+{
+  "accounts": {
+    "main": {
+      "appid": "替换成你的AppID",
+      "appsecret": "替换成你的AppSecret"
+    },
+    "secondary": {
+      "appid": "替换成第二个AppID",
+      "appsecret": "替换成第二个AppSecret"
+    }
+  }
+}
+
