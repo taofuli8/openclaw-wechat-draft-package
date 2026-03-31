@@ -13,16 +13,10 @@ openclaw onboard
 
 ## 2) 一句话安装本工具
 
-把 `<RAW_BASE_URL>` 换成你的仓库 raw 地址：
+基于你的仓库地址（可直接用）：
 
 ```bash
-bash -lc "curl -fsSL <RAW_BASE_URL>/dist/install_openclaw_wechat.sh | bash -s -- --raw-base <RAW_BASE_URL>"
-```
-
-示例：
-
-```bash
-bash -lc "curl -fsSL https://raw.githubusercontent.com/<github-username>/openclaw-wechat-draft-package/main/dist/install_openclaw_wechat.sh | bash -s -- --raw-base https://raw.githubusercontent.com/<github-username>/openclaw-wechat-draft-package/main"
+bash -lc "curl -fsSL https://raw.githubusercontent.com/taofuli8/openclaw-wechat-draft-package/main/install_openclaw_wechat.sh | bash -s -- --raw-base https://raw.githubusercontent.com/taofuli8/openclaw-wechat-draft-package/main"
 ```
 
 ## 3) 填账号并发第一篇
@@ -43,4 +37,4 @@ bash -lc "curl -fsSL https://raw.githubusercontent.com/<github-username>/opencla
 - 不要提交真实 `accounts.json`、Token、Cookie、密钥、日志
 - 只提交模板文件（`*.template.json`）
 
-![肥猫AI干货二维码](docs/wechat-qrcode.png)
+![肥猫AI干货二维码](wechat-qrcode.png)
