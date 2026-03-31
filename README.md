@@ -1,65 +1,46 @@
-# OpenClaw WeChat Draft Package
+# OpenClaw WeChat Draft（60 秒上手）
 
-这个仓库用于给全新 OpenClaw 环境快速增加“微信公众号草稿发布”能力，目标是：
+给全新 OpenClaw 环境加上“微信公众号草稿发布”能力。
 
-- 可开源共享：不包含真实账号密钥、密码、个人环境路径。
-- 可一键安装：给 OpenClaw 一句话，它就能把工具装到目标 Linux 容器。
-- 可维护复用：账号配置走模板文件，后续只改 `accounts.json` 即可。
-
-## 一句话给 OpenClaw（核心）
-
-直接把下面这句话发给 OpenClaw 即可：
+## 1) 先装 OpenClaw（新环境只做一次）
 
 ```bash
-bash -lc "curl -fsSL https://raw.githubusercontent.com/taofuli8/openclaw-wechat-draft-package/main/install_openclaw_wechat.sh | bash -s -- --raw-base https://raw.githubusercontent.com/taofuli8/openclaw-wechat-draft-package/main"
+npm config set registry https://registry.npmjs.org
+npm install -g openclaw@latest
+openclaw --version
+openclaw onboard
 ```
 
-## 安装后怎么用
+## 2) 一句话安装本工具
 
-先准备正文文件（HTML 或 Markdown）到容器里，例如 `/opt/wechat-draft-cli/article.html`，然后执行：
+把 `<RAW_BASE_URL>` 换成你的仓库 raw 地址：
+
+```bash
+bash -lc "curl -fsSL <RAW_BASE_URL>/dist/install_openclaw_wechat.sh | bash -s -- --raw-base <RAW_BASE_URL>"
+```
+
+示例：
+
+```bash
+bash -lc "curl -fsSL https://raw.githubusercontent.com/<github-username>/openclaw-wechat-draft-package/main/dist/install_openclaw_wechat.sh | bash -s -- --raw-base https://raw.githubusercontent.com/<github-username>/openclaw-wechat-draft-package/main"
+```
+
+## 3) 填账号并发第一篇
+
+编辑 `/opt/wechat-draft-cli/accounts.json` 填入你自己的 `appid/appsecret`，再执行：
 
 ```bash
 /usr/local/bin/wechat-draft publish '发草稿 标题=文章标题 文件=/opt/wechat-draft-cli/article.html 账号=main'
 ```
 
-成功判据（必须同时出现）：
+看到以下两行即成功：
 
 - `[OK] 草稿创建成功`
 - `[WECHAT_API] ok=1 media_id=...`
 
-## 首次必改配置
+## 开源安全提醒
 
-编辑容器内文件：
+- 不要提交真实 `accounts.json`、Token、Cookie、密钥、日志
+- 只提交模板文件（`*.template.json`）
 
-- `/opt/wechat-draft-cli/accounts.json`
-
-模板结构：
-
-```json
-{
-  "accounts": {
-    "main": {
-      "appid": "替换成你的AppID",
-      "appsecret": "替换成你的AppSecret"
-    }
-  }
-}
-```
-
-## 数据脱敏说明
-
-本仓库默认仅保留模板和示例，不应提交以下内容：
-
-- 真实 `accounts.json`、`.env`、日志、备份密钥文件
-- 个人内网地址、个人路径、个人昵称/实名等环境痕迹
-- 明文密码、Token、Cookie、AccessKey 等
-
-## 公众号信息（肥猫AI干货）
-
-- 名称：`肥猫AI干货`
-- 简介：专注 AI 干货｜大模型资讯 + 优惠 + 实战计划，每天带你薅羊毛、学代码
-
-二维码：
-
-![肥猫AI干货二维码](wechat-qrcode.png)
-
+![肥猫AI干货二维码](docs/wechat-qrcode.png)
