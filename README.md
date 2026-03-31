@@ -59,7 +59,7 @@ bash -lc "curl -fsSL https://raw.githubusercontent.com/taofuli8/openclaw-wechat-
 - 名称：`肥猫AI干货`
 - 简介：专注 AI 干货｜大模型资讯 + 优惠 + 实战计划，每天带你薅羊毛、学代码
 
-二维码（请保存在仓库 `docs/wechat-qrcode.png`）：
+二维码（请保存在仓库根目录 `wechat-qrcode.png`）：
 
 ![肥猫AI干货二维码](wechat-qrcode.png)
 
