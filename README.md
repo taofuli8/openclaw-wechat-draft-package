@@ -37,4 +37,9 @@ bash -lc "curl -fsSL https://raw.githubusercontent.com/taofuli8/openclaw-wechat-
 - 不要提交真实 `accounts.json`、Token、Cookie、密钥、日志
 - 只提交模板文件（`*.template.json`）
 
+## 公众号信息
+
+- 名称：`肥猫AI干货`
+- 简介：专注 AI 干货｜大模型资讯 + 优惠 + 实战计划，每天带你薅羊毛、学代码
+
 ![肥猫AI干货二维码](wechat-qrcode.png)
